@@ -14,6 +14,5 @@ export function downloadLink(file_path, s3Bucket) {
   if (s3Bucket) {
     config.params.s3BucketName = s3Bucket;
   }
-  console.log("call api client:", file_path)
   return apiClient.get("/download", config);
 }

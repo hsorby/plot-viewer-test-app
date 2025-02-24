@@ -112,93 +112,9 @@ watch(
     }
     plotInfo.value.datacite.supplemental_json_metadata.description =
       JSON.stringify(m);
-    console.log("id:", id.value)
-    console.log(datasetInfo.value)
-    // apiCalls.push(
-    //   downloadLink(
-    //     `${datasetId}/files/${filePath}`,
-    //     "prd-sparc-discover50-use1"
-    //   )
-    // );
-    // if (s) {
-    //   apiCalls.push(
-    //     downloadLink(`${datasetId}/files/${s}`, "prd-sparc-discover50-use1")
-    //   );
-    // }
-    // Promise.allSettled(apiCalls).then(responses => {
-    //   console.log("started:", source_uri.value)
-    //   source_uri.value = responses[0].value;
-    //   console.log("changed:", source_uri.value)
-    //   if (responses.length > 1) {
-    //     supplemental_data.value = [{ uri: responses[1].value }];
-    //   }
-    // });
-  },
+},
   { immediate: true }
 );
-
-// plot_annotation.value.supplemental_json_metadata.description = computed(() => {
-//   let m = {
-//     version: "1.1.0",
-//     type: "plot",
-//     attrs: {
-//       style: "timeseries",
-//     },
-//   };
-//   switch (id.value) {
-//     case 1:
-//       m = {
-//         version: "1.1.0",
-//         type: "plot",
-//         attrs: {
-//           style: "timeseries",
-//           "y-axes-columns": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14],
-//         },
-//       };
-//       break;
-//     case 2:
-//       m = {
-//         version: "1.1.0",
-//         type: "plot",
-//         attrs: {
-//           style: "timeseries",
-//           "x-axis-column": 2,
-//           "y-axes-columns": [3, 4, 5, 6],
-//         },
-//       };
-//       break;
-//     case 3:
-//       m = {
-//         version: "1.2.0",
-//         type: "plot",
-//         attrs: { style: "timeseries", "no-header": true },
-//       };
-//       break;
-//     case 4:
-//       m = {
-//         version: "1.1.0",
-//         type: "plot",
-//         attrs: {
-//           style: "timeseries",
-//           "x-axis-column": 2,
-//           "y-axes-columns": [3, 4, 5, 6, 7, 8, 9, 10],
-//         },
-//       };
-//       break;
-//     case 5:
-//       m = {
-//         version: "1.2.0",
-//         type: "plot",
-//         attrs: {
-//           style: "heatmap",
-//           logScale: true,
-//           layout: { margin: { t: 55, l: 200, r: 55, b: 200, pad: 4 } },
-//         },
-//       };
-//       break;
-//   }
-//   return JSON.stringify(m);
-// });
 </script>
 
 <template>

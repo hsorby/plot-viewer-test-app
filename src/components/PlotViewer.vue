@@ -142,7 +142,7 @@ function updatePlot() {
       ...toValue(plotly_options),
     }
   ).then(() => {
-    plotly_plot_ready.value = true
+    plotly_plot_ready.value = true;
   });
 }
 
@@ -176,18 +176,20 @@ watch(
     <div class="container p-0">
       <div class="plot-container">
         <div id="plotly_graph" ref="plotly_plot_ref" class="vue-plotly" />
-        <data-filtering
-          v-model:selection-x="filteredx"
-          v-model:selection-y="filteredy"
-          :titles="titles"
-          @filter-clicked="onFilterClicked"
-        ></data-filtering>
-        <zoom-management
-          v-model="plotly_layout"
-          :plotlyPlot="plotly_plot_ref"
-          :plotlyPlotReady="plotly_plot_ready"
-          :dataReset="dataReset"
-        ></zoom-management>
+        <div class="plot-controls">
+          <data-filtering
+            v-model:selection-x="filteredx"
+            v-model:selection-y="filteredy"
+            :titles="titles"
+            @filter-clicked="onFilterClicked"
+          ></data-filtering>
+          <zoom-management
+            v-model="plotly_layout"
+            :plotlyPlot="plotly_plot_ref"
+            :plotlyPlotReady="plotly_plot_ready"
+            :dataReset="dataReset"
+          ></zoom-management>
+        </div>
       </div>
     </div>
   </div>
@@ -203,5 +205,15 @@ watch(
 
 .container {
   padding: 0;
+}
+
+.plot-controls {
+  display: flex;
+  padding-top: 0.5rem;
+  align-items: center;
+}
+
+.controls div:last-child {
+  margin-left: auto;
 }
 </style>

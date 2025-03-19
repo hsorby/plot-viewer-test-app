@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@abi-software/plotcomponents": "^0.1.0",
+    "@abi-software/plotcomponents": "^0.2.0",
     "@abi-software/plotdatahelpers": "^0.1.0",
     "axios": "^1.7.9",
     "plotly.js": "3.0.0",
